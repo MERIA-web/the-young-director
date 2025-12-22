@@ -1,0 +1,419 @@
+/* =====================================================
+   VARIABLES GLOBALES
+===================================================== */
+/* =====================================================
+   ARRIÈRE-PLAN ANIMÉ
+===================================================== */
+
+/* Dégradé animé pour le body (site entier) */
+body {
+    background: linear-gradient(135deg, #f8f9fa 0%, #f1e6d6 50%, #f8f9fa 100%);
+    background-size: 400% 400%;
+    animation: gradientBG 20s ease infinite;
+}
+
+/* Animation de gradient */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.hero-section {
+    background-color: var(--dark);
+    color: #fff;
+    padding: 40px 0; /* uniforme */
+    border-bottom: 4px solid var(--gold);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.bio {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.photo-zone {
+    max-width: 200px; /* photo plus petite */
+}
+
+.profile-photo {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+/* Texte */
+.text-zone {
+    flex: 1;
+    min-width: 220px;
+}
+
+.text-zone h1 {
+    font-size: 1.8rem;
+    margin: 0 0 10px 0;
+    animation: fadeUp 1s ease forwards;
+}
+
+.brand-name, .title-role, .key-statement {
+    animation: fadeUp 1s ease forwards;
+    opacity: 0;
+}
+
+.brand-name { animation-delay: 0.1s; font-weight: bold; letter-spacing: 3px; color: var(--gold);}
+.title-role { animation-delay: 0.3s; font-style: italic; color: #ccc; }
+.key-statement { animation-delay: 0.5s; border-left: 3px solid var(--gold); padding-left: 10px; color: #ddd; font-style: italic; }
+
+@keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(15px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* SECTION DETAIL */
+.detail-section {
+    padding-top: 40px; /* moins d’espace */
+    padding-bottom: 40px;
+}
+
+/* VIDÉOS */
+.video-item {
+    margin-bottom: 20px;
+}
+
+.video-item video {
+    width: 100%;
+    height: 250px; /* fixe pour toutes */
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+
+/* Animation au hover */
+.video-item:hover {
+    transform: translateY(-4px);
+    transition: transform 0.3s ease;
+}
+
+/* BOUTONS */
+.btn-outline-dark, .btn-outline-light {
+    transition: all 0.3s ease;
+}
+
+.btn-outline-dark:hover {
+    background-color: var(--dark);
+    color: var(--gold);
+    border-color: var(--gold);
+}
+.btn-outline-light:hover {
+    background-color: var(--gold);
+    color: #111;
+    border-color: var(--gold);
+}
+
+/* Container flex */
+.bio {
+    display: flex;
+    gap: 30px; /* réduit l’écart entre image et texte */
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Image plus petite */
+.photo-zone {
+    max-width: 280px; /* réduit la taille de la photo */
+    flex-shrink: 0;
+}
+
+/* Texte héroïque */
+.text-zone {
+    flex: 1;
+    min-width: 280px;
+}
+
+/* Animation légère sur le texte */
+.text-zone h1, 
+.text-zone .brand-name, 
+.text-zone .title-role, 
+.text-zone .key-statement {
+    animation: fadeUp 1s ease forwards;
+    opacity: 0;
+}
+
+.text-zone h1 { animation-delay: 0.3s; }
+.text-zone .brand-name { animation-delay: 0.1s; }
+.text-zone .title-role { animation-delay: 0.5s; }
+.text-zone .key-statement { animation-delay: 0.7s; }
+
+@keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Réduction espacement entre hero et section suivante */
+.detail-section {
+    padding-top: 40px; /* moins d’espace avant la section */
+    padding-bottom: 80px;
+}
+
+/* Optionnel: Halo subtil derrière le header */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(197,160,89,0.1) 0%, transparent 70%);
+    animation: slow-spin 30s linear infinite;
+    z-index: 0;
+}
+
+@keyframes slow-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+:root {
+    --gold: #c5a059;
+    --dark: #111111;
+    --light: #f8f9fa;
+    --text: #111;
+    --transition: all 0.3s ease;
+}
+
+/* =====================================================
+   BASE (SAFE BOOTSTRAP)
+===================================================== */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: var(--light);
+    color: var(--text);
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+}
+
+/* =====================================================
+   HERO / ACCUEIL
+===================================================== */
+.hero-section {
+    background-color: var(--dark);
+    color: #fff;
+    padding: 80px 0;
+    border-bottom: 4px solid var(--gold);
+}
+
+.bio {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.photo-zone {
+    max-width: 420px;
+}
+
+.profile-photo {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* =====================================================
+   TEXTE HERO
+===================================================== */
+.brand-name {
+    color: var(--gold);
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.title-role {
+    font-style: italic;
+    color: #ccc;
+}
+
+.separator {
+    width: 60px;
+    height: 4px;
+    background-color: var(--gold);
+    margin: 20px 0;
+}
+
+.key-statement {
+    border-left: 3px solid var(--gold);
+    padding-left: 20px;
+    font-style: italic;
+    color: #ddd;
+}
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+.detail-section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: var(--gold);
+    margin: 15px auto 0;
+}
+
+/* =====================================================
+   GALERIE MAGAZINE (MASONRY CSS)
+===================================================== */
+.masonry-grid {
+    columns: 4;
+    column-gap: 20px;
+}
+
+@media (max-width: 992px) {
+    .masonry-grid {
+        columns: 2;
+    }
+}
+
+@media (max-width: 576px) {
+    .masonry-grid {
+        columns: 1;
+    }
+}
+
+.magazine-item {
+    break-inside: avoid;
+    margin-bottom: 20px;
+    transition: var(--transition);
+}
+
+.magazine-img:hover {
+    transform: scale(1.03);
+    transition: 0.3s ease;
+}
+
+
+.magazine-img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* =====================================================
+   VIDÉOS (SÉCURISÉES, AUCUN CONFLIT)
+===================================================== */
+.video-item {
+    transition: transform 0.3s ease;
+}
+
+.video-item:hover {
+    transform: translateY(-6px);
+}
+
+.video-item video {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 14px;
+    background-color: #000;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    display: block;
+}
+
+@media (max-width: 576px) {
+    .text-zone {
+        text-align: center;
+    }
+}
+
+
+/* =====================================================
+   TITRES CATÉGORIES VIDÉOS
+===================================================== */
+.video-categorie {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    border-bottom: 3px solid var(--gold);
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* =====================================================
+   BOUTONS
+===================================================== */
+.btn-outline-dark {
+    border-width: 2px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+.btn-outline-dark:hover {
+    background-color: var(--dark);
+    color: var(--gold);
+    border-color: var(--gold);
+}
+
+.btn-outline-light {
+    border: 2px solid var(--gold);
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.btn-outline-light:hover {
+    background-color: var(--gold);
+    border-color: var(--gold);
+    color: #111;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+.site-footer {
+    background-color: var(--dark);
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.site-footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.site-footer a:hover {
+    color: var(--gold);
+    text-decoration: underline;
+}
+
+.site-footer .social-links a {
+    margin: 0 8px;
+}
