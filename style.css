@@ -19,12 +19,19 @@
 body {
     margin: 0;
     font-family: "Segoe UI", Arial, sans-serif;
-    background: linear-gradient(135deg, #3f7fc0, #f1e6d6, #ffffff);
-    background-size: 400% 400%;
-    animation: gradientBG 18s ease infinite;
+    background: linear-gradient(
+        120deg,
+        #2b5fa3,
+        #3f7fc0,
+        #f1e6d6,
+        #ffffff
+    );
+    background-size: 600% 600%;
+    animation: gradientBG 25s ease infinite;
     color: var(--text);
     line-height: 1.7;
 }
+
 
 a {
     text-decoration: none;
@@ -117,8 +124,10 @@ img {
 ================================ */
 .detail-section {
     padding: 80px 0;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(6px);
 }
+
 
 .section-title {
     text-align: center;
@@ -201,4 +210,9 @@ img {
     .masonry-grid {
         columns: 1;
     }
+}
+section.bg-light,
+section.py-5 {
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(4px);
 }
