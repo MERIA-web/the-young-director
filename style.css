@@ -249,6 +249,13 @@ section.bg-light {
 /* Footer reste sombre */
 .site-footer {
     background: #111 !important;
+    background: linear-gradient(
+      120deg,
+        #2b5fa3,
+        #3f7fc0,
+        #f1e6d6,
+        #ffffff
+    );
 }
 
 /* Empêche le blanc vide sous le hero */
